@@ -1,6 +1,7 @@
 package edu.icet.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
 
 @Entity
@@ -12,9 +13,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    @Email
+    @Column(unique = true)
+    private String email;
 
     private String password;
 
-    private String role; // ROLE_HR, ROLE_ADMIN
+    private String role;
+
+    private String firstName;
+
+    private String lastName;
 }
