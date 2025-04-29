@@ -2,6 +2,7 @@ package edu.icet.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Builder
 @Table(name = "employees", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Employee {
 
