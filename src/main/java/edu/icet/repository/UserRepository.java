@@ -1,4 +1,10 @@
 package edu.icet.repository;
 
-public class UserRepository {
+import edu.icet.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByUsername(String username);
 }
